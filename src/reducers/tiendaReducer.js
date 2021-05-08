@@ -10,10 +10,16 @@ const estadoInicial = {
 
 }
 
+//Reducer es una funcion que se encarga de administrar el estado global de la app
 
-
-const reducer = (estado=estadoInicial, accion) => {
-      return estado;
+const reducer = (estado = estadoInicial, accion) => {
+      switch (accion.type){
+            case 'AGREGAR_PRODUCTO_AL_CARRITO':
+                  console.log(accion.nombre);
+            return estado;
+            default:
+                  return estado;
+      }
 
 
 };
