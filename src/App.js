@@ -11,15 +11,6 @@ import {createStore} from 'redux';
 import reducer from './reducers/tiendaReducer';
 
 const App = () => {
-  const productos = [
-    {id:1, nombre: "Producto 1"},
-    {id:2, nombre: "Producto 2"},
-    {id:3, nombre: "Producto 3"},
-    {id:4, nombre: "Producto 4"}
-  ];
-
-  const [carrito, cambiarCarrito] = useState([]);
-
   const agregarProductoAlCarrito = (idProductoAAgregar, nombre) => {
     //If the shopping cart is empty, add  element.
     if(carrito.length === 0){
@@ -67,7 +58,7 @@ const App = () => {
   }
   
   const store= createStore(reducer); //reducer es una funcion encargada de editar el estado global
-  console.log(store.getState())
+  /* console.log(store.getState()) */
 
 
   return ( 
@@ -83,8 +74,7 @@ const App = () => {
             <Route path="/" exact={true} component={Inicio} />
             <Route path="/blog" exact={true} component={Blog} />
             <Route path="/tienda"> 
-              <Tienda 
-                productos={productos} 
+              <Tienda
                 agregarProductoAlCarrito= {agregarProductoAlCarrito}
               />
             </Route>
@@ -92,7 +82,7 @@ const App = () => {
           </Switch>
         </main>
         <aside>
-          <Carrito carrito= {carrito} />
+          <Carrito />
         </aside>
     </Contenedor>
     </Provider>

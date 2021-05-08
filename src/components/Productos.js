@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {connect} from 'react-redux';
 
 const Productos = ({productos, agregarProductoAlCarrito}) => {
     return ( 
@@ -60,5 +61,11 @@ const Boton = styled.button`
         background: #1c6ab9;
     }
 `;
- 
-export default Productos;
+
+const mapStateToProps = (estado) => {
+    return {
+        productos: estado.productos
+    }
+}
+
+export default connect(mapStateToProps)(Productos);
