@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {NavLink, Switch, Route} from 'react-router-dom'
 import Inicio from './components/Inicio';
@@ -11,7 +11,6 @@ import {createStore} from 'redux';
 import reducer from './reducers/tiendaReducer';
 
 const App = () => {  
-  
   const store= createStore(reducer); //reducer es una funcion encargada de editar el estado global
   /* console.log(store.getState()) */
 
